@@ -1,0 +1,13 @@
+- roles based 
+ meta: {
+            roles: ["one"]
+        },
+        beforeEnter: (to, from, next) => {
+            // let x = to.meta.roles;
+            if (localStorage.getItem("token")) {
+                next()
+            } else {
+                next('/about');
+
+            }
+        },
